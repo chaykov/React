@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-// import App from './App'
+import App from './App'
 
 // function Clock( props ){
 //     return (
@@ -88,24 +88,39 @@ import ReactDOM from 'react-dom'
 //     }
 // }
 
-function Mailbox(props){
-    const unreadMessages = props.unreadMessages;
-    return (
-        <div>
-            <h1>Cześć!</h1>
-            {unreadMessages.length > 0 &&
-                <h2>
-                    Masz {unreadMessages.length} nieprzeczytanych wiadomości.
+// function Mailbox(props){
+//     const unreadMessages = props.unreadMessages;
+//     return (
+//         <div>
+//             <h1>Cześć!</h1>
+//             {unreadMessages.length > 0 &&
+//                 <h2>
+//                     Masz {unreadMessages.length} nieprzeczytanych wiadomości.
                     
-                </h2>
-            }
-        </div>
-    )
-}
+//                 </h2>
+//             }
+//         </div>
+//     )
+// }
 
-const messages = ['React', 'Re: React', 'Re:Re: React', 'hehe'];
+// const messages = ['React', 'Re: React', 'Re:Re: React', 'hehe'];
+
+// class Profile extends React.Component{
+//     render(){
+//         return(
+//             <div>
+//                 <img src={this.props.profilePictureSrc} alt="" />
+//                 <h2>{this.props.name}</h2>
+//             </div>
+//         )
+//     }
+// }
+
+// Profile.defaultProps = {
+//     profilePictureSrc: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'
+// }
 
 ReactDOM.render(
-    <Mailbox unreadMessages={messages}/>,
+    <App />,
     document.getElementById('root')
 )

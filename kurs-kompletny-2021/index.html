@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React app</title>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+
+    <!-- {1 > 4 ? 'jest większe' : 'jest mniejsze'} -->
+    <!-- if(1 > 4){return 'jest wieksze'} else {return 'jest mniejsze'}; -->
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const Post = (props) => {
+            const showMoreContent = (event) => {
+                event.preventDefault();
+                console.log('przycisk kliknięty')
+            }
+
+            return(
+                <div>
+                    <h2>{props.title}</h2>
+                    {props.showContent ? 
+                    (<p>{props.content}</p>
+                    ) : (
+                    <>
+                        <p>{props.shortContent}</p>
+                        <button onClick={showMoreContent}>Czytaj więcej</button>
+                        <a href="#" onClick={showMoreContent}>Czytaj więcej</a>
+                    </>) 
+                    }
+                    <hr />
+                </div> 
+            );
+        }
+
+        const Blog = function(){
+            const posts = [
+                {
+                    title: 'Przepis na naleśniki',
+                    shortContent: 'Na naturalnym mleku...',
+                    content: 'mleko, trzebo ugotować',
+                    showContent: true,
+                    id: 3
+                },
+                {
+                    title: 'Przepis na kurczaka',
+                    shortContent: 'Na ostro...',
+                    content: 'pokroić kurczaka, usmażyć...',
+                    showContent: false,
+                    id: 2
+                }
+            ];
+
+            const postsList = (
+                posts.map((el) => (
+                    <Post 
+                        key={el.id}
+                        {...el}
+                    />
+                )))
+
+        return(
+            <div>
+                <p>To jest blog o gotowaniu</p>
+                {postsList}
+            </div>
+            );
+        }
+
+        ReactDOM.render(
+        <Blog />,
+        document.getElementById('root')
+        )
+    </script>
+    
+</body>
+</html>

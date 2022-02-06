@@ -22,11 +22,12 @@ function Header() {
         </div>
 
         <div className="header__right">
-            <HeaderOption Icon={HomeIcon} title="Homse"/>
+            <HeaderOption Icon={HomeIcon} title="Home"/>
             <HeaderOption Icon={SupervisorAccount} title="My network"/>
             <HeaderOption Icon={BusinessCenterIcon} title="Jobs"/>
             <HeaderOption Icon={ChatIcon} title="Chat"/>
             <HeaderOption Icon={NotificationsIcon} title="Notifications"/>
+            <HeaderOption avatar="https://compassionate-leakey-e9b16b.netlify.app/images/IG_Sonny.jpeg" title='me' />
         </div>
     </div>
   )
